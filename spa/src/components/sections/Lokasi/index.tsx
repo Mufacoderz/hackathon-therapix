@@ -132,10 +132,6 @@ export default function Lokasi() {
                     height={42}
                     className="w-8 md:w-10 h-auto"
                   />
-
-                  <p className="hidden md:block absolute left-10 top-2 text-[14px] text-[#8B6A4D] whitespace-nowrap">
-                    Samarinda Kota
-                  </p>
                 </div>
 
                 {/* UNGU */}
@@ -147,10 +143,6 @@ export default function Lokasi() {
                     height={42}
                     className="w-8 md:w-10 h-auto"
                   />
-
-                  <p className="hidden md:block absolute left-10 top-2 text-[14px] text-[#8B6A4D] whitespace-nowrap">
-                    Samarinda Kota
-                  </p>
                 </div>
 
                 {/* BIRU */}
@@ -162,10 +154,6 @@ export default function Lokasi() {
                     height={42}
                     className="w-8 md:w-10 h-auto"
                   />
-
-                  <p className="hidden md:block absolute left-10 top-2 text-[14px] text-[#8B6A4D] whitespace-nowrap">
-                    Samarinda Kota
-                  </p>
                 </div>
 
                 {/* KUNING */}
@@ -177,10 +165,6 @@ export default function Lokasi() {
                     height={42}
                     className="w-8 md:w-10 h-auto"
                   />
-
-                  <p className="hidden md:block absolute left-10 top-2 text-[14px] text-[#8B6A4D] whitespace-nowrap">
-                    Samarinda Kota
-                  </p>
                 </div>
 
                 {/* HIJAU */}
@@ -193,9 +177,6 @@ export default function Lokasi() {
                     className="w-8 md:w-10 h-auto"
                   />
 
-                  <p className="hidden md:block absolute left-10 top-2 text-[14px] text-[#8B6A4D] whitespace-nowrap">
-                    Samarinda Kota
-                  </p>
                 </div>
               </div>
             </div>

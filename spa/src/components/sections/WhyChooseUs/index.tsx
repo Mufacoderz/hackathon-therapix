@@ -133,7 +133,7 @@ function Counter({
 
   React.useEffect(() => {
     const controls = animate(count, to, {
-      duration: 2,
+      duration: 4,
       ease: "easeOut",
       onUpdate(latest) {
         setDisplay(
