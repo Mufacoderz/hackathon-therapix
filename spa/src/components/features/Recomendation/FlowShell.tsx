@@ -66,20 +66,20 @@ export default function FlowShell() {
   return (
     <div className="min-h-screen overflow-y-auto bg-[#F5EFE6] px-4 py-8">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center">
-        <div className="mb-6 text-center">
-          <h1 className="text-2xl font-semibold text-[#5C3D2E]">
-            Rekomendasi AI
-          </h1>
+        {step < 4 && (
+          <div className="mb-6 text-center">
+            <h1 className="text-2xl font-semibold text-[#5C3D2E]">
+              Rekomendasi AI
+            </h1>
 
-          {step < 4 && (
             <p className="mt-1 text-sm text-[#9C7B6B]">
               {step === 0 && "AI akan menyesuaikan rekomendasi berdasarkan area yang dipilih"}
               {step === 1 && "Pilih level pijatan"}
               {step === 2 && "Berapa lama sesi yang kamu inginkan"}
               {step === 3 && "Ceritakan keluhanmu"}
             </p>
-          )}
-        </div>
+          </div>
+        )}
 
         {step < 4 && (
           <div className="mb-8 flex items-center gap-0 overflow-x-auto">
@@ -91,21 +91,19 @@ export default function FlowShell() {
                 <div key={label} className="flex items-center">
                   <div className="flex flex-col items-center">
                     <div
-                      className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-all ${
-                        isActive || isDone
+                      className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-all ${isActive || isDone
                           ? "bg-[#8B6B52] text-white"
                           : "border border-[#C9A882] bg-white text-[#C9A882]"
-                      }`}
+                        }`}
                     >
                       {i + 1}
                     </div>
 
                     <span
-                      className={`mt-1 w-16 text-center text-[10px] ${
-                        isActive || isDone
+                      className={`mt-1 w-16 text-center text-[10px] ${isActive || isDone
                           ? "font-medium text-[#8B6B52]"
                           : "text-[#C9A882]"
-                      }`}
+                        }`}
                     >
                       {label}
                     </span>
@@ -113,9 +111,8 @@ export default function FlowShell() {
 
                   {i < STEPS.length - 1 && (
                     <div
-                      className={`mb-4 h-px w-12 transition-all ${
-                        i < step ? "bg-[#8B6B52]" : "bg-[#D9C5B5]"
-                      }`}
+                      className={`mb-4 h-px w-12 transition-all ${i < step ? "bg-[#8B6B52]" : "bg-[#D9C5B5]"
+                        }`}
                     />
                   )}
                 </div>
@@ -125,11 +122,10 @@ export default function FlowShell() {
         )}
 
         <div
-          className={`w-full ${
-            step === 4
+          className={`w-full ${step === 4
               ? "max-w-6xl pb-12"
               : "max-w-4xl rounded-3xl bg-white p-6 shadow-sm"
-          }`}
+            }`}
         >
           {step === 0 && (
             <StepBadan
