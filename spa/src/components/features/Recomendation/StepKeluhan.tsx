@@ -1,4 +1,6 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
+import logoCoklat from "@/public/images/logo-coklat.png"
 
 interface Props {
   value: string;
@@ -88,10 +90,33 @@ export default function StepKeluhan({
           disabled={value.trim().length < 5 || loading}
           className="mt-6 flex w-38 items-center justify-center gap-2 rounded-4xl border-2 border-[#8B6B52] py-2 text-sm font-medium text-[#8B6B52] transition disabled:opacity-40 md:w-52"
         >
-          <span>{loading ? "Menganalisis..." : "Kirim"}</span>
+          <span>Kirim</span>
           <FaArrowRight />
         </button>
       </section>
+
+      {loading && (
+        <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/35 px-4 backdrop-blur-sm">
+          <div className="w-full max-w-sm rounded-[28px] bg-[#FFF9EF] px-7 py-8 text-center shadow-2xl animate-in fade-in zoom-in duration-200">
+            <div className="relative mx-auto mb-6 flex h-22 w-22 items-center justify-center rounded-full bg-[#8B6B52]/10">
+              <div className="absolute inset-2 rounded-full border border-[#C8A96E]/50 animate-ping" />
+              <Image src={logoCoklat}  width={42} height={42} alt="logo" />
+            </div>
+
+            <h3 className="text-xl font-semibold text-main">
+              Menganalisis Rekomendasi
+            </h3>
+
+            <p className="mt-3 text-sm leading-relaxed text-second">
+              AI sedang mencocokkan kebutuhan Anda dengan treatment terbaik.
+            </p>
+
+            <div className="mt-6 h-2 overflow-hidden rounded-full bg-second">
+              <div className="h-full w-1/2 rounded-full bg-ternary animate-[loadingSlide_1.4s_ease-in-out_infinite]" />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
