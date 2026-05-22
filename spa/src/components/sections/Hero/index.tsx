@@ -1,6 +1,7 @@
 
 "use client";
 
+
 import Link from "next/link"
 import { motion } from "framer-motion";
 
@@ -90,6 +91,7 @@ export default function Hero() {
                     </motion.div>
                 </motion.div>
             </div>
+
         </main>
     );
 }
