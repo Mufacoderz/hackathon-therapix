@@ -4,6 +4,8 @@ import type { Result, Treatment } from "@/types/flow";
 import { formatPrice } from "@/utils/formatRupiah";
 import { FaChevronRight, FaQuoteLeft } from "react-icons/fa";
 import { LuSparkles, LuCalendarDays, LuShieldCheck, LuList } from "react-icons/lu";
+import Image from "next/image";
+import logoCoklat from '@/public/images/logo-coklat.png'
 
 interface Props {
   result: Result;
@@ -25,8 +27,7 @@ const handleBooking = (treatment: Treatment, durasi: number, keluhan: string) =>
 export default function StepResult({ result, keluhan }: Props) {
   return (
     <section className="w-full pb-12 font-poppins text-[#8B6B52]">
-      <div className="mb-8 text-center">
-        <div className="mb-1 text-3xl">♧</div>
+      {/* <div className="mb-8 text-center">
         <h1 className="font-playfair text-xl font-semibold text-[#8B6B52]">
           de Home Spa
         </h1>
@@ -38,6 +39,16 @@ export default function StepResult({ result, keluhan }: Props) {
           PILIHAN TERBAIK
         </h2>
         <div className="h-px w-24 bg-[#8B6B52]" />
+      </div> */}
+      <div className="favorite-header">
+        <h2 className="font-playfair  text-[36px] text-main text-center">Rekomendasi Ai</h2>
+        <div className="divider-area flex items-center justify-center gap-4">
+          <div className="divider w-40 h-1 bg-ternary rounded-full" />
+          <div className="logo">
+            <Image src={logoCoklat} width={80} height={80} alt="logo" />
+          </div>
+          <div className="divider w-40 h-1 bg-ternary rounded-full" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.35fr_0.85fr]">
@@ -94,7 +105,7 @@ export default function StepResult({ result, keluhan }: Props) {
               <div>
                 <div className="mb-4 grid grid-cols-2 gap-3">
                   <div className="rounded-lg border border-[#F0C98D] bg-[#FFF3D5] px-4 py-3">
-                    <p className="text-[10px] text-[#C8A96E]">⊙ Durasi</p>
+                    <p className="text-[10px] text-[#C8A96E]">Durasi</p>
                     <p className="mt-1 text-lg text-[#8B6B52]">
                       {result.durasi} Menit
                     </p>
@@ -134,12 +145,12 @@ export default function StepResult({ result, keluhan }: Props) {
             {result.related?.map((t) => (
               <div
                 key={t.kode}
-                className="rounded-lg border border-[#B98F6B] bg-[#FFF8E8] p-3"
+                className="rounded-lg border border-[#B98F6B] bg-[#FFF8E8] p-4"
               >
-                <div className="flex items-center justify-between gap-3">
-                  <div>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <h4 className="text-xs font-bold text-[#6F4E37]">
+                      <h4 className="text-sm font-bold text-[#6F4E37]">
                         {t.nama}
                       </h4>
 
@@ -148,14 +159,22 @@ export default function StepResult({ result, keluhan }: Props) {
                       </span>
                     </div>
 
-  
+                    <div className="mt-3 flex items-center gap-4 text-xs text-[#8B6B52]">
+                      <span>
+                        {result.durasi} Menit
+                      </span>
+
+                      <span>
+                        {formatPrice(t.harga_durasi)}
+                      </span>
+                    </div>
                   </div>
 
                   <button
                     onClick={() => handleBooking(t, result.durasi, keluhan)}
-                    className="shrink-0 rounded bg-[#8B6B52] px-3 py-2 text-[9px] font-semibold text-white transition hover:bg-[#735640]"
+                    className="shrink-0 rounded-lg bg-[#8B6B52] px-4 py-2 text-[10px] font-semibold text-white transition hover:bg-[#735640]"
                   >
-                    Harga & Durasi
+                    Booking Sekarang
                   </button>
                 </div>
               </div>
