@@ -124,13 +124,13 @@ export default function Lokasi() {
                 />
 
                 {/* MERAH */}
-                <div className="absolute top-[23%] left-[41%]">
+                <div className="absolute top-[32%] left-[41%]">
                   <Image
                     src={TitikLokasiMerah}
                     alt=""
                     width={42}
                     height={42}
-                    className="w-8 md:w-10 h-auto"
+                    className="w-3 md:w-5 h-auto"
                   />
                 </div>
 
@@ -141,18 +141,18 @@ export default function Lokasi() {
                     alt=""
                     width={42}
                     height={42}
-                    className="w-8 md:w-10 h-auto"
+                    className="w-3 md:w-5 h-auto"
                   />
                 </div>
 
                 {/* BIRU */}
-                <div className="absolute top-[49%] left-[28%]">
+                <div className="absolute top-[52%] left-[28%]">
                   <Image
                     src={TitikLokasiBiru}
                     alt=""
                     width={42}
                     height={42}
-                    className="w-8 md:w-10 h-auto"
+                    className="w-3 md:w-5 h-auto"
                   />
                 </div>
 
@@ -163,18 +163,18 @@ export default function Lokasi() {
                     alt=""
                     width={42}
                     height={42}
-                    className="w-8 md:w-10 h-auto"
+                    className="w-3 md:w-5 h-auto"
                   />
                 </div>
 
                 {/* HIJAU */}
-                <div className="absolute bottom-[24%] left-[48%]">
+                <div className="absolute bottom-[32%] left-[48%]">
                   <Image
                     src={TitikLokasiHijau}
                     alt=""
                     width={42}
                     height={42}
-                    className="w-8 md:w-10 h-auto"
+                    className="w-3 md:w-5 h-auto"
                   />
 
                 </div>
