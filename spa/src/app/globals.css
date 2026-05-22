@@ -52,6 +52,7 @@
 :root {
   --main-bg: #fdf5e6;
   --second-bg: #E8D0A4;
+  --third-bg: #603e00;
   --main-text: #603e00;
   --main-secondary: #8b6b52;
 
@@ -131,6 +132,10 @@
 
     .bg-second{
       background-color: var(--second-bg);
+    }
+
+    .bg-third{
+      background-color: var(--third-bg)
     }
 
     .text-main {
