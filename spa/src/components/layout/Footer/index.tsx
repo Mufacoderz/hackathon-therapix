@@ -141,7 +141,7 @@ export default function Footer() {
                     Telepon / WA
                   </p>
 
-                  <p>0812-3456-7890</p>
+                  <p>0857-5342-1213</p>
                 </div>
               </div>
 
@@ -155,7 +155,7 @@ export default function Footer() {
                     Email
                   </p>
 
-                  <p>namaspa@gmail.com</p>
+                  <p>dehomespa@gmail.com</p>
                 </div>
               </div>
 
@@ -183,7 +183,7 @@ export default function Footer() {
                     Jam Operasional
                   </p>
 
-                  <p>08.00 - 21.00</p>
+                  <p>08.00 - 22.00</p>
                 </div>
               </div>
 
