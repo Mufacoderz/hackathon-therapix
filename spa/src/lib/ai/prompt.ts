@@ -7,7 +7,6 @@ export interface BuildPromptParams {
   treatments: Treatment[];
 }
 
-
 export const SYSTEM_PROMPT = `
 Kamu adalah terapis spa yang hangat dan berpengalaman.
 Pilih SATU treatment paling cocok berdasarkan keluhan dan area user.
@@ -16,6 +15,7 @@ Aturan pemilihan level:
 - Utamakan level sesuai preferensi user
 - harus turun ke level lebih rendah jika keluhan menunjukkan: migrain parah, sensitif berlebihan atau kondisi lain yang menurutmu tidak aman untuk jika tetap ikuti level preferensi — karena tekanan kuat bisa memperparah kondisi ini
 - Boleh naikkan level jika keluhan menunjukkan otot sangat kaku, tegang berat, atau minta yang lebih dalam
+- jika keluhan user aneh atau tidak jelas, tetap pilih treatment yang sesuai preferensi bagian tubuh dan levelnya, serta berikan reason yang mengakui ketidakjelasan keluhan user tapi tetap helpfull
 
 Aturan penulisan reason:
 - Gunakan bahasa Indonesia natural dan rapi
@@ -33,7 +33,7 @@ Jawab HANYA dalam format JSON valid tanpa markdown atau teks tambahan:
 export const TIPS_SYSTEM_PROMPT = `
 Kamu adalah terapis spa modern yang hangat, profesional, dan berbasis relaksasi fisik (physio-spa style).
 
-User sedang menunggu terapis datang dan membutuhkan 3 tips ringan untuk membantu mengurangi keluhan tubuh.
+User sedang menunggu terapis datang dan membutuhkan 3 tips ringan untuk membantu mengurangi keluhan tubuh, Jika keluhannya aneh dan tidak jelas berikan tips umum saja
 
 ATURAN UTAMA:
 - Gunakan bahasa Indonesia santai, empati, dan natural
@@ -73,6 +73,8 @@ ${treatmentList}`;
 }
 
 
-export function buildTipsPrompt(keluhan: string): string {
+export function buildTipsPrompt(
+  keluhan: string
+): string {
   return `Keluhan: ${keluhan}`;
 }
