@@ -64,9 +64,9 @@ export default function FlowShell() {
   const STEPS = ["Area Tubuh", "Level", "Durasi", "Keluhan"];
 
   return (
-    <div className="min-h-screen bg-[#F5EFE6] flex flex-col items-center px-4 py-8">
+    <div className="min-h-screen bg-[#F5EFE6] flex flex-col items-center px-4 py-4">
 
-      <div className="text-center mb-6">
+      <div className="text-center mb-4">
         <h1 className="text-2xl font-semibold text-[#5C3D2E]">Rekomendasi AI</h1>
         {step < 4 && (
           <p className="text-sm text-[#9C7B6B] mt-1">
@@ -79,7 +79,7 @@ export default function FlowShell() {
       </div>
 
       {step < 4 && (
-        <div className="flex items-center gap-0 mb-8">
+        <div className="flex items-center gap-0 mb-4">
           {STEPS.map((label, i) => {
             const isActive = i === step;
             const isDone = i < step;
@@ -87,7 +87,7 @@ export default function FlowShell() {
               <div key={label} className="flex items-center">
                 <div className="flex flex-col items-center">
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all
+                    className={`w-6 h-6 rounded-full flex items-center justify-center text-sm font-semibold transition-all
                       ${isActive || isDone
                         ? "bg-[#8B6B52] text-white"
                         : "bg-white border border-[#C9A882] text-[#C9A882]"
@@ -117,7 +117,7 @@ export default function FlowShell() {
         </div>
       )}
 
-      <div className="w-full max-w-4xl bg-white rounded-3xl shadow-sm overflow-hidden">
+      <div className="w-full max-w-xl bg-white h-117 rounded-3xl shadow-md overflow-hidden">
         <div className="p-6">
           {step === 0 && (
             <StepBadan
@@ -156,7 +156,7 @@ export default function FlowShell() {
           )}
         </div>
 
-        {step > 0 && step < 4 && (
+        {/* {step > 0 && step < 4 && (
           <div className="px-6 pb-5 flex justify-between">
             <button
               onClick={handleBack}
@@ -165,17 +165,8 @@ export default function FlowShell() {
               ← Kembali
             </button>
           </div>
-        )}
-        {step === 0 && (
-          <div className="px-6 pb-5">
-            <button
-              onClick={() => router.push("/")}
-              className="text-sm text-[#9C7B6B] hover:text-[#5C3D2E] transition flex items-center gap-1"
-            >
-              ← Kembali ke beranda
-            </button>
-          </div>
-        )}
+        )} */}
+
       </div>
 
     </div>
