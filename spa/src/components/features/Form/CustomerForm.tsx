@@ -38,8 +38,6 @@ export default function CustomerForm({
   setLokasi,
   detailAlamat,
   setDetailAlamat,
-  payment,
-  setPayment,
   catatan,
   setCatatan,
   tanggal,
@@ -202,24 +200,6 @@ export default function CustomerForm({
               placeholder="08xxxxxxxxxx"
               className="w-full rounded-xl border border-stone-200 px-4 py-3 text-sm outline-none focus:border-stone-400"
             />
-          </div>
-
-          <div>
-            <label className="text-xs text-stone-500 mb-1 block">
-              Metode Pembayaran
-            </label>
-
-            <select
-              required
-              value={payment}
-              onChange={(e) => setPayment(e.target.value)}
-              className="w-full rounded-xl border border-stone-200 px-4 py-3 text-sm outline-none focus:border-stone-400"
-            >
-              <option value="Cash">Cash</option>
-              <option value="Transfer Bank">Transfer Bank</option>
-              <option value="E-Wallet">E-Wallet</option>
-              <option value="QRIS">QRIS</option>
-            </select>
           </div>
 
           <div>
