@@ -12,16 +12,16 @@ export default function ReservasiAI() {
 
           <div className="inline-flex items-center gap-3 border-2 border-[#E0A11B] bg-[#FFF1D6] rounded-[15px] px-5 py-3 mb-8">
             <Sparkles className="text-[#F4A300] w-7 h-7 fill-[#F4A300]" />
-            <span className="font-poppins font-semibold text-[18px] md:text-[20px] text-[#B58D6A]">
+            <span className="font-poppins font-semibold text-[18px] md:text-[20px] text-second">
               Rekomendasi AI
             </span>
           </div>
 
-          <h2 className="font-poppins font-bold text-[#8B6B52] text-[24px] md:text-[40px] leading-tight uppercase mb-4">
+          <h2 className="font-poppins font-bold text-second text-[24px] md:text-[40px] leading-tight uppercase mb-4">
             Bingung Pilih Treatment ?
           </h2>
 
-          <p className="font-poppins text-[#9B765B] text-[20px] md:text-[28px] leading-relaxed max-w-175 mb-10">
+          <p className="font-poppins text-second text-[20px] md:text-[28px] leading-relaxed max-w-175 mb-10">
             Ceritakan apa yang kamu rasakan, dan kami akan
             pilihkan layanan yang paling cocok buat kamu.
           </p>
