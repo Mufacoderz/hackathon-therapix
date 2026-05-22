@@ -25,7 +25,7 @@ export default function Favorit() {
     <section className="bg-main p-10 ">
       <div className="favorite-header">
         <h3 className="font-poppins text-[20px] text-second text-center">Explorasi Layanan Kami</h3>
-        <h2 className="font-playfair  text-[40px] text-main text-center">Treatment Favorite Pelanggan Kami</h2>
+        <h2 className="font-playfair  text-[48px] text-main text-center">Treatment Favorite Pelanggan Kami</h2>
         <div className="divider-area flex items-center justify-center gap-4">
           <div className="divider w-40 h-1 bg-ternary rounded-full" />
           <div className="logo">
