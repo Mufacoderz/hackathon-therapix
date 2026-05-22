@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Treatment } from "@/types/treatment";
+import { Clock } from "lucide-react";
+
 
 type Durasi = 30 | 60 | 90 | 120;
 
@@ -36,67 +38,72 @@ export default function PricingModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full sm:max-w-sm rounded-t-3xl sm:rounded-2xl bg-white p-6 shadow-2xl"
+        className="relative w-full sm:max-w-md rounded-t-3xl sm:rounded-2xl bg-white overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-stone-100 text-stone-500 hover:bg-stone-200 transition"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        </button>
 
-        <div className="mb-4 pr-8">
-          <p className="font-poppins text-[11px] font-semibold uppercase tracking-widest text-stone-400 mb-1">
-            {treatment.area}
-          </p>
-          <h3 className="font-poppins text-[18px] font-bold text-stone-800 leading-snug">
-            {treatment.nama}
-          </h3>
-          <span className="mt-1.5 inline-block rounded-full px-3 py-0.5 font-poppins text-[11px] font-semibold bg-[#F5E6C8] text-[#B9892A]">
-            {treatment.level}
-          </span>
-          <p className="mt-2.5 font-poppins text-[13px] text-stone-500 leading-relaxed">
-            {treatment.desc}
-          </p>
-        </div>
+        <div className="card-pricing">
+          <div className="mb-4 pr-8 bg-[#8B6B52] p-6 text-center">
+            <h3 className="text-white font-poppins text-[27px] font-bold">Durasi & Harga</h3>
+            <p className="text-white font-poppins text-[14px]">Pilih Durasi Layanan Sesuai Kebutuhan Anda</p>
+          </div>
 
-        <div className="h-px bg-stone-100 mb-4" />
 
-        <p className="font-poppins text-[11px] font-semibold uppercase tracking-widest text-stone-400 mb-3">
-          Pilih Durasi
-        </p>
-        <div className="grid grid-cols-4 gap-2 mb-4">
-          {durations.map((d) => (
+          <div className="flex flex-col gap-2.5 m-5 rounded-[15px] px-2 py-5 border border-[#8B6B52]">
+            {durations.map((d) => (
+              <button
+                key={d}
+                onClick={() => setSelected(d)}
+                className={`flex items-center justify-between px-4 py-3.5 border-b transition-all ${selected === d
+                  ? "border-b-[#BD8622] bg-[#fdf6e9]"
+                  : "border-b-stone-200 bg-white hover:border-b-[#BD8622]"
+                  }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="icon-jam bg-second p-1 rounded-full">
+                    <Clock size={20} className=" text-[#BD8622]" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-poppins text-sm font-semibold text-stone-800">{d} menit</p>
+                    <p className="font-poppins text-[11px] text-stone-400">Durasi Treatment</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-poppins text-sm font-bold text-[#BD8622]">
+                    Rp {treatment.harga[d].toLocaleString("id-ID")}
+                  </span>
+
+                </div>
+              </button>
+            ))}
+          </div>
+
+
+          <div className="btn-card m-5 p-2 flex flex-col gap-2.5">
             <button
-              key={d}
-              onClick={() => setSelected(d)}
-              className={`font-poppins rounded-xl py-2.5 text-[13px] font-semibold transition-all border-2 ${
-                selected === d
-                  ? "bg-[#BD8622] border-[#BD8622] text-white"
-                  : "border-stone-200 text-stone-600 bg-white hover:border-[#BD8622] hover:text-[#BD8622]"
-              }`}
+              onClick={handleBook}
+              className="booking font-poppins font-semibold bg-[#8B6B52] text-[#FDF5E6] text-center p-4 rounded-xl 
+  shadow-[2px_3px_0px_0px_#FDF5E6] 
+  hover:shadow-[1px_2px_0px_0px_#FDF5E6] hover:translate-x-px hover:translate-y-px
+  active:shadow-none active:translate-x-0.5 active:translate-y-0.75
+  transition-all duration-100"
             >
-              {d} mnt
+              Booking Sekarang
             </button>
-          ))}
-        </div>
 
-        <div className="rounded-xl bg-[#fdf6e9] border border-[#f0d9a0] px-4 py-3 flex items-center justify-between mb-5">
-          <span className="font-poppins text-[13px] text-stone-500 font-medium">Total Harga</span>
-          <span className="font-poppins text-[20px] font-bold text-[#BD8622]">
-            Rp {harga.toLocaleString("id-ID")}
-          </span>
-        </div>
+            <button
+              onClick={() => onClose()}
+              className="batal font-poppins font-semibold bg-[#FDF5E6] text-[#8B6B52] text-center p-4 rounded-xl 
+  shadow-[2px_3px_0px_0px_#761A1C]
+  hover:shadow-[1px_2px_0px_0px_#761A1C] hover:translate-x-px hover:translate-y-px
+  active:shadow-none active:translate-x-0.5 active:translate-y-0.75
+  transition-all duration-100"
+            >
+              Batal
+            </button>
+          </div>
 
-        <button
-          onClick={handleBook}
-          className="w-full rounded-full bg-linear-to-r from-[#E3B45E] to-[#BD8622] py-3.5 font-poppins text-[14px] font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-[0.98]"
-        >
-          Booking Sekarang →
-        </button>
+        </div>
       </div>
     </div>
   );
