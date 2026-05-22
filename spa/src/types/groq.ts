@@ -1,3 +1,5 @@
+// src/types/groq.ts
+
 export interface GroqResponse {
   choices?: {
     message?: {
