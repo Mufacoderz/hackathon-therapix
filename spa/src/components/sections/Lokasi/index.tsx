@@ -15,7 +15,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Lokasi() {
   return (
-    <section className="relative bg-[#F5EFE5] py-14 md:py-20 overflow-hidden font-poppins">
+    <section className="relative bg-main py-14 md:py-20 overflow-hidden font-poppins">
 
       {/* DAUN */}
       <div className="absolute left-0 top-0 opacity-15 hidden md:block">
@@ -54,7 +54,7 @@ export default function Lokasi() {
                 <div className="mt-8 space-y-7 relative">
 
                   {/* LINE */}
-                  <div className="absolute left-[5px] top-[12px] bottom-[12px] w-[2px] bg-[#B89A79]" />
+                  <div className="absolute left-1.25 top-3 bottom-3 w-0.5 bg-[#B89A79]" />
 
                   {[
                     {
@@ -100,7 +100,7 @@ export default function Lokasi() {
                 </div>
 
                 {/* BOX */}
-                <div className="mt-8 bg-[#E8D2A7] rounded-2xl px-5 py-4 max-w-[360px]">
+                <div className="mt-8 bg-[#E8D2A7] rounded-2xl px-5 py-4 max-w-90">
 
                   <h4 className="text-[#8B6A4D] font-semibold text-[15px] md:text-[16px]">
                     Belum menemukan wilayahmu?
@@ -114,7 +114,7 @@ export default function Lokasi() {
               </div>
 
               {/* MAP */}
-              <div className="relative bg-[#EAE1D1] min-h-[420px] md:min-h-[520px]">
+              <div className="relative bg-[#EAE1D1] min-h-105 md:min-h-130">
 
                 <Image
                   src={map}

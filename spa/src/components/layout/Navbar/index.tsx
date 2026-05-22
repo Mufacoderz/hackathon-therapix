@@ -152,10 +152,10 @@ export default function Navbar() {
             </SheetTrigger>
 
             <SheetContent
-              side="right"
+              side="left"
               className="
                 border-border/20
-                bg-[#2D1B12]/95
+                bg-background/10
                 text-white
                 backdrop-blur-2xl
               "

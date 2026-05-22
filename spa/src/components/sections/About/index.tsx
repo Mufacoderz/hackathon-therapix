@@ -12,7 +12,7 @@ export default function About() {
                             <div className="about-head font-playfair text-main text-[40px] sm:text-[55px] lg:text-[64px]">
                                 Tentang Kami
                             </div>
-                            <div className="about-text font-poppins text-second text-[14px] sm:text-[18px] lg:text-[24px]">
+                            <div className="about-text font-poppins text-second text-[14px] sm:text-[16px] lg-[18px] xl:text-[20px]  sm:pr-20">
                                 Di de HOME SPA, kami percaya bahwa di tengah hiruk-pikuk dunia, bisa beristirahat dengan mudah adalah kemewahan sejati. Kami hadir memadukan kecanggihan digital dengan sentuhan tangan yang tulus untuk memberikan pengalaman relaksasi yang berbeda.
                             </div>
                            
