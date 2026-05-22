@@ -1,9 +1,13 @@
+"use client";
+
 import type { Result, Treatment } from "@/types/flow";
 import { formatPrice } from "@/utils/formatRupiah";
+import { FaChevronRight, FaQuoteLeft } from "react-icons/fa";
+import { LuSparkles, LuCalendarDays, LuShieldCheck, LuList } from "react-icons/lu";
 
 interface Props {
   result: Result;
-  keluhan: string
+  keluhan: string;
 }
 
 const handleBooking = (treatment: Treatment, durasi: number, keluhan: string) => {
@@ -18,126 +22,168 @@ const handleBooking = (treatment: Treatment, durasi: number, keluhan: string) =>
   window.location.href = `/form?${params.toString()}`;
 };
 
-
 export default function StepResult({ result, keluhan }: Props) {
   return (
-    <div>
-      <p className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-4">
-        Rekomendasi AI
-      </p>
-
-      <div className="rounded-[28px] border border-stone-200 bg-white p-5 shadow-sm mb-5">
-
-
-        <div className="rounded-3xl bg-stone-900 text-white p-5 mb-5 relative overflow-hidden">
-
-          <div className="absolute -top-8 -right-8 w-24 h-24 bg-white/5 rounded-full" />
-          <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-white/5 rounded-full" />
-
-          <p className="text-[11px] uppercase tracking-[0.2em] text-stone-400 mb-3 relative z-10">
-            Kenapa treatment ini cocok?
-          </p>
-
-          <p className="text-[15px] leading-7 text-stone-100 relative z-10">
-            {result.reason}
-          </p>
-        </div>
-
-        <div className="flex items-start justify-between gap-4 mb-5">
-          <div>
-            <p className="text-xs text-stone-400 mb-1">
-              {result.treatment.area} · {result.treatment.level}
-            </p>
-
-            <h2 className="text-xl font-semibold text-stone-800 leading-snug">
-              {result.treatment.nama}
-            </h2>
-          </div>
-
-          <div className="px-3 py-1 rounded-full bg-stone-100 text-xs text-stone-600 whitespace-nowrap">
-            {result.durasi} menit
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between border-t border-stone-100 pt-4 mb-5">
-          <div>
-            <p className="text-xs text-stone-400 mb-1">
-              Estimasi Harga
-            </p>
-
-            <p className="text-lg font-semibold text-stone-900">
-              {formatPrice(result.treatment.harga_durasi)}
-            </p>
-          </div>
-
-          <div className="text-right">
-            <p className="text-xs text-stone-400 mb-1">
-              Level Tekanan
-            </p>
-
-            <p className="text-sm font-medium text-stone-700 capitalize">
-              {result.treatment.level}
-            </p>
-          </div>
-        </div>
-
-        <button
-          onClick={() =>
-            handleBooking(
-              result.treatment,
-              result.durasi,
-              keluhan
-            )
-          }
-          className="w-full py-3 rounded-2xl bg-stone-900 text-white text-sm font-medium hover:bg-stone-800 transition-all active:scale-[0.98]"
-        >
-          Booking Treatment Ini
-        </button>
+    <section className="w-full pb-12 font-poppins text-[#8B6B52]">
+      <div className="mb-8 text-center">
+        <div className="mb-1 text-3xl">♧</div>
+        <h1 className="font-playfair text-xl font-semibold text-[#8B6B52]">
+          de Home Spa
+        </h1>
       </div>
 
-      {/* Treatment Terkait */}
-      {result.related?.length > 0 && (
-        <div className="mb-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-3">
-            Treatment Terkait
-          </p>
+      <div className="mb-6 flex items-center justify-center gap-2">
+        <div className="h-px w-24 bg-[#8B6B52]" />
+        <h2 className="font-playfair text-xl font-bold tracking-wide text-[#8B6B52]">
+          PILIHAN TERBAIK
+        </h2>
+        <div className="h-px w-24 bg-[#8B6B52]" />
+      </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {result.related.map((t) => (
-              <div
-                key={t.kode}
-                className="border border-stone-200 rounded-2xl p-4 hover:border-stone-400 transition flex flex-col gap-3"
-              >
-                <div>
-                  <p className="text-xs text-stone-400 mb-1">{t.area}</p>
-                  <p className="text-sm font-medium text-stone-800 leading-snug">{t.nama}</p>
-                  <p className="text-xs text-stone-500 mt-1">
-                    {t.level} · {result.durasi} menit
-                  </p>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.35fr_0.85fr]">
+        <div className="space-y-4">
+          <div className="rounded-2xl border border-[#C8A96E] bg-[#FFF8E8] p-5 shadow-md">
+            <div className="mb-4 flex items-center justify-between">
+              <div className="-ml-2 flex w-fit items-center gap-2 rounded-r-full bg-[#8B6B52] px-4 py-2 text-xs font-bold text-white">
+                <LuSparkles />
+                <span>Rekomendasi AI</span>
+              </div>
+
+            </div>
+
+            <div className="relative rounded-xl bg-[#FFF0C7] px-6 py-5">
+              <FaQuoteLeft className="absolute left-3 top-4 text-xl text-[#8B6B52]/60" />
+
+              <p className="pl-6 text-sm leading-7 text-[#6F4E37]">
+                {result.reason}
+              </p>
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-3">
+              <span className="rounded-full bg-[#8B6B52] px-4 py-1 text-[10px] font-semibold text-white">
+                {result.treatment.area}
+              </span>
+
+              <span className="rounded-full bg-[#8B6B52] px-4 py-1 text-[10px] font-semibold text-white">
+                {result.treatment.level}
+              </span>
+
+              <span className="rounded-full bg-[#8B6B52] px-4 py-1 text-[10px] font-semibold text-white">
+                {result.durasi} Menit
+              </span>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-[#C8A96E] bg-[#FFF8E8] p-5 shadow-md">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-[1fr_1px_1.7fr] md:items-center">
+              <div>
+                <h3 className="text-2xl font-bold leading-6 text-[#8B6B52]">
+                  Paket
+                  <br />
+                  {result.treatment.nama}
+                </h3>
+
+                <div className="mt-4 inline-flex items-center gap-1 rounded-full bg-[#FFF0C7] px-3 py-1 text-[10px] text-[#8B6B52]">
+                  <LuShieldCheck />
+                  <span>Terapi Aman & Nyaman</span>
+                </div>
+              </div>
+
+              <div className="hidden h-28 w-px bg-[#8B6B52]/50 md:block" />
+
+              <div>
+                <div className="mb-4 grid grid-cols-2 gap-3">
+                  <div className="rounded-lg border border-[#F0C98D] bg-[#FFF3D5] px-4 py-3">
+                    <p className="text-[10px] text-[#C8A96E]">⊙ Durasi</p>
+                    <p className="mt-1 text-lg text-[#8B6B52]">
+                      {result.durasi} Menit
+                    </p>
+                  </div>
+
+                  <div className="rounded-lg border border-[#F0C98D] bg-[#FFF3D5] px-4 py-3">
+                    <p className="text-[10px] text-[#C8A96E]">↗ Harga</p>
+                    <p className="mt-1 text-2xl font-semibold text-[#8B6B52]">
+                      {formatPrice(result.treatment.harga_durasi)}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="mt-auto flex flex-col gap-2">
-                  <p className="text-sm font-semibold text-stone-800">
-                    {formatPrice(t.harga_durasi)}
-                  </p>
+                <button
+                  onClick={() =>
+                    handleBooking(result.treatment, result.durasi, keluhan)
+                  }
+                  className="flex w-full items-center justify-between rounded-lg bg-[#8B6B52] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#735640]"
+                >
+                  <span className="flex items-center gap-2">
+                    <LuCalendarDays />
+                    Booking Sekarang
+                  </span>
+                  <FaChevronRight />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside className="pt-2">
+          <h3 className="mb-5 text-center font-playfair text-xl font-bold text-[#8B6B52]">
+            Treatment Terkait
+          </h3>
+
+          <div className="space-y-4">
+            {result.related?.map((t) => (
+              <div
+                key={t.kode}
+                className="rounded-lg border border-[#B98F6B] bg-[#FFF8E8] p-3"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h4 className="text-xs font-bold text-[#6F4E37]">
+                        {t.nama}
+                      </h4>
+
+                      <span className="rounded-full bg-[#F8D7B0] px-2 py-0.5 text-[8px] text-[#8B6B52]">
+                        {t.level}
+                      </span>
+                    </div>
+
+  
+                  </div>
+
                   <button
                     onClick={() => handleBooking(t, result.durasi, keluhan)}
-                    className="w-full py-2 px-4 bg-stone-800 text-white text-xs font-medium rounded-xl hover:bg-stone-700 transition">
-                    Booking
+                    className="shrink-0 rounded bg-[#8B6B52] px-3 py-2 text-[9px] font-semibold text-white transition hover:bg-[#735640]"
+                  >
+                    Harga & Durasi
                   </button>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      )}
 
-      <button
-        onClick={() => { window.location.href = "/"; }}
-        className="w-full py-3 rounded-2xl border border-stone-200 text-sm text-stone-600 hover:bg-stone-50"
-      >
-        Minta rekomendasi lain
-      </button>
-    </div>
+          <div className="mt-6 text-center">
+            <div className="mb-2 flex items-center justify-center gap-2">
+              <div className="h-px w-12 bg-[#8B6B52]" />
+              <span className="border border-[#C8A96E] px-2 text-[10px] text-[#C76B4A]">
+                atau
+              </span>
+              <div className="h-px w-12 bg-[#8B6B52]" />
+            </div>
+
+            <button
+              onClick={() => {
+                window.location.href = "/layanan";
+              }}
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#8B6B52]"
+            >
+              <LuList />
+              Jelajahi Layanan Kami
+              <FaChevronRight className="text-[10px]" />
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
   );
 }
