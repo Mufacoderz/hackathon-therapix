@@ -45,7 +45,7 @@ export default function StepLevel({
         Pilih Level Pijatan
       </p>
 
-      <div className="mt-12 mb-6 flex gap-4 md:mt-8">
+      <div className="mt-12 mb-6 justify-center flex gap-4 md:mt-8">
         {LEVELS.map((lvl) => (
           <button
             key={lvl.id}
