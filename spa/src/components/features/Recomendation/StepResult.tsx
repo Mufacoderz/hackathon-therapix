@@ -189,7 +189,7 @@ export default function StepResult({ result, keluhan }: Props) {
 
             <button
               onClick={() => {
-                window.location.href = "/layanan";
+                window.location.href = "/#daftar-layanan";
               }}
               className="inline-flex items-center gap-2 text-xs font-semibold text-[#8B6B52]"
             >
