@@ -1,143 +1,201 @@
 import Image from "next/image";
-import logo from '@/public/images/logo.png';
-import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
-import { AiFillTikTok } from "react-icons/ai";
-import { GiCheckMark } from "react-icons/gi";
-import footerImage from '@/public/images/footer.webp'
+import logo from "@/public/images/logo.png";
+import footerImage from "@/public/images/footer.webp";
 
-export default function Footer () {
-    return (
-        <footer id="kontak"
-        className="relative font-poppins">
-<div className="absolute inset-0 -z-10">
-    <Image
-      src={footerImage}
-      alt="footer background"
-      fill
-      className="object-cover"
-      quality={100}
-    />
-    {/* overlay */}
-    <div className="absolute inset-0 bg-black/60" />
-  </div>
-    
-  <div className="mx-auto max-w-7xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <div>
-        <div className="flex justify-start items-center">
-        <div className="flex justify-center sm:justify-start">
-            <Image src={logo} width={100} height={50} quality={75}  alt="spa logo" className="object-contain w-auto h-auto"/>
-        </div>
-            <h1 className="text-white text-4xl font-bold">De Home Spa</h1>
-        </div>
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaClock,
+} from "react-icons/fa";
 
-        <p className="mt-6 max-w-md text-center mx-auto sm:mx-0 leading-relaxed text-white sm:max-w-xs sm:text-left">
-            <span>
-           Satu-satunya home spa di Samarinda dengan ranjang pijat sungguhan. Nikmati pijat tubuh yang menenangkan, manicure dengan lebih dari 50 pilihan warna kuku, musik spa, dan aromaterapi langsung di rumah Anda. 
-            </span>
-        </p>
+export default function Footer() {
+  return (
+    <footer
+      id="kontak"
+      className="relative text-white font-poppins"
+    >
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={footerImage}
+          alt="Footer Background"
+          fill
+          className="object-cover"
+          quality={100}
+        />
 
-        <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
-          <li>
-            <a href="#" rel="noreferrer" target="_blank" className="text-white transition hover:text-slate-400">
-              <span className="sr-only">Facebook</span>
-              <div>
-                <span><FaFacebookSquare className="w-10 h-10"/></span>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" rel="noreferrer" target="_blank" className="text-white transition hover:text-slate-400">
-              <span className="sr-only">Instagram</span>
-              <div className="">
-                <span className=""><FaInstagram className="w-10 h-10"/></span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" rel="noreferrer" target="_blank" className="text-white transition hover:text-slate-400">
-              <span className="sr-only">Tiktok</span>
-              <div className="">
-                <span className=""><AiFillTikTok className="w-11 h-11"/></span>
-              </div>
-            </a>
-          </li>
-        </ul>
+        <div className="absolute inset-0 bg-black/70" />
       </div>
 
-      <div className="grid grid-cols-1 md:flex md:gap-22 w-full mt-12 md:mt-0">
-        <div className="text-center sm:text-left">
-          <p className="text-xl font-medium text-gray-200">Area Layanan</p>
+      <div className="max-w-7xl mx-auto px-6 py-16">
 
-          <ul className="mt-8 space-y-4 text-md flex flex-col items-start ">
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400 text-left" href="#">
-                <GiCheckMark /> pijat panggilan Bandung
+        {/* TOP */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+          {/* BRANDING */}
+          <div>
+            <div className="flex items-center gap-3">
+              <Image
+                src={logo}
+                alt="logo"
+                width={70}
+                height={70}
+                className="object-contain"
+              />
+
+              <h1 className="text-3xl font-bold">
+                De Home Spa
+              </h1>
+            </div>
+
+            <p className="mt-5 text-sm leading-relaxed text-gray-200 max-w-sm">
+              Layanan pijat & perawatan tubuh profesional langsung
+              ke rumahmu. Relaksasi mendalam dengan suasana spa
+              premium tanpa perlu keluar rumah.
+            </p>
+
+            {/* SOCIAL */}
+            <div className="flex gap-4 mt-6">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+              >
+                <FaInstagram />
               </a>
-            </li>
 
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400" href="#">
-                <GiCheckMark />  Kota Samarinda
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+              >
+                <FaFacebookF />
               </a>
-            </li>
 
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400" href="#">
-                <GiCheckMark />  Kabupaten Samarinda Seberang
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+              >
+                <FaWhatsapp />
               </a>
-            </li>
+            </div>
 
-          </ul>
+            {/* RATING */}
+            <div className="mt-8 bg-white/20 backdrop-blur-sm rounded-2xl p-4 w-fit">
+              <p className="text-4xl font-bold">4.8</p>
+
+              <p className="text-sm text-gray-200">
+                dari 1.200+ ulasan pelanggan
+              </p>
+            </div>
+          </div>
+
+          {/* MENU 1 */}
+          <div>
+            <h2 className="text-xl font-semibold mb-5">
+              Layanan
+            </h2>
+
+            <ul className="space-y-3 text-gray-200">
+              <li>Full Body Massage</li>
+              <li>Massage & Refleksi</li>
+              <li>Massage Totok Wajah</li>
+              <li>Massage Scrub</li>
+              <li>Massage Kerokan</li>
+            </ul>
+          </div>
+
+          {/* MENU 2 */}
+          <div>
+            <h2 className="text-xl font-semibold mb-5">
+              Informasi
+            </h2>
+
+            <ul className="space-y-3 text-gray-200">
+              <li>Tentang Kami</li>
+              <li>Cara Pemesanan</li>
+              <li>Area Layanan</li>
+              <li>Promo & Paket</li>
+              <li>Galeri</li>
+              <li>Blog Kesehatan</li>
+            </ul>
+          </div>
+
+          {/* KONTAK */}
+          <div>
+            <h2 className="text-xl font-semibold mb-5">
+              Kontak
+            </h2>
+
+            <div className="space-y-5 text-gray-200">
+
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+                  <FaPhoneAlt />
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-300">
+                    Telepon / WA
+                  </p>
+
+                  <p>0812-3456-7890</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+                  <FaEnvelope />
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-300">
+                    Email
+                  </p>
+
+                  <p>namaspa@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+                  <FaMapMarkerAlt />
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-300">
+                    Area Layanan
+                  </p>
+
+                  <p>Samarinda & Sekitarnya</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+                  <FaClock />
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-300">
+                    Jam Operasional
+                  </p>
+
+                  <p>08.00 - 21.00</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
-        <div className="text-center sm:text-left mt-22 md:mt-0">
-          <p className="text-xl font-medium text-gray-200">Price List & Reservasi</p>
-          <ul className="mt-8 space-y-4 text-md">
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400" href="#">
-               <GiCheckMark />  Reservasi
-              </a>
-            </li>
-
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400" href="#">
-               <GiCheckMark />  Price List
-              </a>
-            </li>
-
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400" href="#">
-               <GiCheckMark />  Phone: 0822-5312-9334
-              </a>
-            </li>
-
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400" href="#">
-               <GiCheckMark />  Privacy Policy
-              </a>
-            </li>
-
-            <li>
-              <a className="text-white flex gap-2 transition hover:text-slate-400" href="#">
-                <GiCheckMark />  Term & Condition
-              </a>
-            </li>
-          </ul>
+        {/* BOTTOM */}
+        <div className="border-t border-white/20 mt-14 pt-6 text-center text-sm text-gray-300">
+          © 2026 De Home Spa - Samarinda, Kalimantan Timur
         </div>
-
       </div>
-    </div>
-
-    <div className="mt-12 border-t border-gray-100 pt-6">
-      <div className="text-center sm:flex sm:justify-center sm:text-center">
-        <p className="mt-4 text-sm text-white sm:order-first sm:mt-0">
-          © 2026 Home Spa - Samarinda, Kalimantan Timur
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-    )
+    </footer>
+  );
 }

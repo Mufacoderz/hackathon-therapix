@@ -3,10 +3,11 @@ import "./globals.css";
 
 import {
   Poppins,
-  Playfair_Display,
-} from "next/font/google";
+  Playfair_Display, Geist } from "next/font/google";
 
 import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,13 +37,12 @@ export default function RootLayout({
     <html
       lang="id"
       className={cn(
-        "h-full",
-        "antialiased",
-        "scroll-smooth",
-        "font-sans",
-        poppins.variable,
-        playfair.variable
-      )}
+              "h-full",
+              "antialiased",
+              "scroll-smooth",
+              poppins.variable,
+              playfair.variable
+            , "font-sans", geist.variable)}
     >
       <body className="flex min-h-full flex-col">
         {children}
