@@ -82,7 +82,7 @@ export default function Hero() {
                         </Link>
 
                         <Link
-                            href="#"
+                            href="#daftar-layanan "
                             className=" font-poppins rounded-full border-2 border-primary-foreground/80 bg-primary-foreground/5 px-7 py-3.5 text-center text-base font-semibold text-primary-foreground backdrop-blur-md transition-all duration-300 hover:bg-primary-foreground hover:text-[#B35811] md:px-9 md:py-4 md:text-xl"
                         >
                             Lihat Layanan

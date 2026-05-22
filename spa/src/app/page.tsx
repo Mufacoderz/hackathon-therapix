@@ -5,7 +5,7 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import About from "@/components/sections/About";
 import Reservasi from "@/components/sections/Reservasi";
 import Lokasi from "@/components/sections/Lokasi";
-import Unggulan from "@/components/sections/Unggulan";
+import Favorit from "@/components/sections/Favorite";
 import Testimoni from "@/components/sections/Testimoni";
 import FAQ from "@/components/sections/FAQ";
 
@@ -17,9 +17,9 @@ export default function Home() {
     <Navbar />
     <Hero />
     <WhyChooseUs/>
+    <Favorit/>
     <About/>
     <Lokasi/>
-    <Unggulan/>
     <Testimoni/>
     <Reservasi/>
     <FAQ/>
