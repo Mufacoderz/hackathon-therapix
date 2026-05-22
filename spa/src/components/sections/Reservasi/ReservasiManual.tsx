@@ -6,6 +6,7 @@ import type { Treatment } from "@/types/treatment";
 import TreatmentCard from "./TreatmentCard";
 import PricingModal from "./PricingModal";
 
+
 type Area = "Treatment Favorit" | "Kepala" | "Lengan" | "Upper Body" | "Kaki" | "Seluruh Badan";
 
 const AREAS: Area[] = ["Treatment Favorit", "Kepala", "Lengan", "Upper Body", "Kaki", "Seluruh Badan"];
@@ -49,62 +50,55 @@ export default function ReservasiManual() {
         <div className="flex-1 h-2.5 rounded-full bg-[#BD8622]" />
       </div>
 
-      <div className="bg-second rounded-[15px] px-3 sm:px-6 pt-4 sm:pt-6 pb-6 sm:pb-8">
+      <div className="bg-transparent rounded-[15px] px-3 sm:px-6 pt-4 sm:pt-6 pb-6 sm:pb-8">
 
         <div className="mb-6">
-
-          <div className="grid grid-cols-3 gap-2 sm:hidden">
+          {/* responsif  */}
+          <div className="grid grid-cols-2 sm:hidden gap-2 bg-[#FDF5E6] p-2 rounded-[15px] border border-[#8B6B52]/25">
             {AREAS.map((area) => {
               const isActive = activeArea === area;
+
               return (
                 <button
                   key={area}
                   onClick={() => setActiveArea(area)}
-                  className={`
-                    rounded-[10px] py-2.5 px-2
-                    font-poppins text-[11px] font-bold text-center leading-snug
-                    transition-colors
-                    ${isActive
-                      ? "bg-[#F0DCB4] text-stone-900 shadow-sm"
-                      : "bg-second text-stone-600 hover:text-stone-900"
+                  className={` rounded-[12px] px-3 py-3 font-poppins text-[12px] font-bold text-center leading-snug transition-all duration-200
+                  ${isActive
+                      ? "bg-ternary text-white shadow-sm"
+                      : "bg-transparent text-second hover:bg-[#8B6B52]/10"
                     }
                   `}
                 >
                   {TAB_LABEL[area]}
-                  {isActive && (
-                    <div className="mt-1.5 mx-auto w-6 h-[2.5px] bg-[#BD8622] rounded-full" />
-                  )}
                 </button>
               );
             })}
           </div>
 
-          <div className="hidden sm:flex border-b-2 border-stone-800/20">
+          {/* deskto */}
+          <div className="hidden sm:flex overflow-hidden rounded-t-[15px] bg-[#FDF5E6] border border-[#8B6B52]/30 border-b-2 border-b-[#603e00]">
             {AREAS.map((area) => {
               const isActive = activeArea === area;
+
               return (
                 <button
                   key={area}
                   onClick={() => setActiveArea(area)}
                   className={`
-                    relative flex-1 py-4 px-2
-                    font-poppins text-[14px] font-bold text-center leading-snug
-                    whitespace-pre-line transition-colors
-                    ${isActive
-                      ? "text-stone-900 bg-[#F0DCB4] rounded-t-xl"
-                      : "text-stone-700 hover:text-stone-900"
+            relative flex-1 px-4 py-4
+            font-poppins text-[14px] md:text-[16px] font-bold text-center leading-snug
+            transition-all duration-200
+            ${isActive
+                      ? "bg-ternary text-white"
+                      : "bg-transparent text-[#8B6B52] hover:bg-[#8B6B52]/10"
                     }
-                  `}
+          `}
                 >
                   {TAB_LABEL[area]}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.75 bg-[#BD8622] rounded-t-full" />
-                  )}
                 </button>
               );
             })}
           </div>
-
         </div>
 
         <div className="flex flex-col gap-3 sm:gap-4">

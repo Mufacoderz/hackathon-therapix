@@ -8,7 +8,7 @@ export default function TreatmentCard({
   onOpen: (t: Treatment) => void;
 }) {
   return (
-    <div className="flex items-center justify-between gap-3 sm:gap-6 bg-white rounded-[15px] px-4 sm:px-6 py-4 sm:py-5 shadow-sm">
+    <div className="flex items-center justify-between gap-3 sm:gap-6 bg-[#FDF5E6] border border-[#8B6B52]/50 rounded-[15px] px-4 sm:px-6 py-4 sm:py-5 shadow-sm">
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 sm:gap-2.5 flex-wrap mb-1.5 sm:mb-2">
           <span className="font-poppins font-bold text-stone-900 text-[15px] sm:text-[17px]">
@@ -24,7 +24,7 @@ export default function TreatmentCard({
       </div>
       <button
         onClick={() => onOpen(treatment)}
-        className="shrink-0 rounded-full bg-[#BD8622] px-3 sm:px-5 py-2 sm:py-2.5 font-poppins text-[11px] sm:text-[13px] font-semibold text-white whitespace-nowrap transition hover:bg-[#a57320] active:scale-[0.97]"
+        className="shrink-0 rounded-full bg-ternary px-3 sm:px-5 py-2 sm:py-2.5 font-poppins text-[11px] sm:text-[13px] font-semibold text-white whitespace-nowrap transition hover:bg-[#a57320] active:scale-[0.97]"
       >
         Harga &amp; Durasi
       </button>
