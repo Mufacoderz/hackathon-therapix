@@ -86,7 +86,7 @@ export default function StepDurasi({
         <button
           onClick={onNext}
           disabled={selected.length === 0}
-          className="mt-6 flex w-42 items-center justify-center gap-2 rounded-4xl border-2 border-[#8B6B52] py-2 text-sm font-medium text-[#8B6B52] transition disabled:opacity-40 md:w-52"
+          className="mt-6 flex w-38 items-center justify-center gap-2 rounded-4xl border-2 border-[#8B6B52] py-2 text-sm font-medium text-[#8B6B52] transition disabled:opacity-40 md:w-52"
         >
           <span>Lanjutkan</span>
           <FaArrowRight />
