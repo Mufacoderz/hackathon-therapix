@@ -17,9 +17,10 @@
       {
         "name": "next"
       }
-    ],
+    ], 
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"]
     }
   },
   "include": [
