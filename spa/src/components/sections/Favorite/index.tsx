@@ -2,18 +2,19 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import logoCoklat from "@/public/images/logo-coklat.png";
 import { TREATMENTS } from "@/data/treatment";
-
+import Link from "next/link";
+import { ArrowDown } from "lucide-react";
 import refleksiKaki from "@/public/images/favorite-treatment/refleksi-kaki.png";
 import migrain from "@/public/images/favorite-treatment/terpi-reda-migrain.png";
 import punggung from "@/public/images/favorite-treatment/refleksi-punggung.png";
 
 const FAVORITE_IMAGES: Record<string, StaticImageData> = {
-  C1: refleksiKaki,
-  J1: migrain,
-  G1: punggung,
+  D1: refleksiKaki,
+  J1: punggung,
+  C1: migrain,
 };
 
-const FAVORIT_KODE = ["C1", "J1", "G1"];
+const FAVORIT_KODE = ["D1", "J1", "C1"];
 
 
 export default function Favorit() {
@@ -21,20 +22,20 @@ export default function Favorit() {
     FAVORIT_KODE.includes(t.kode)
   );
   return (
-    <section className="bg-main p-10">
+    <section className="bg-main p-10 ">
       <div className="favorite-header">
-        <h3 className="font-poppins text-[36px] text-second text-center">Explorasi Layanan Kami</h3>
-        <h2 className="font-playfair  text-[64px] text-main text-center">Treatment Favorite Pelanggan Kami</h2>
+        <h3 className="font-poppins text-[20px] text-second text-center">Explorasi Layanan Kami</h3>
+        <h2 className="font-playfair  text-[40px] text-main text-center">Treatment Favorite Pelanggan Kami</h2>
         <div className="divider-area flex items-center justify-center gap-4">
-          <div className="divider w-40 h-1.5 bg-third rounded-full" />
+          <div className="divider w-40 h-1 bg-ternary rounded-full" />
           <div className="logo">
             <Image src={logoCoklat} width={80} height={80} alt="logo" />
           </div>
-          <div className="divider w-40 h-1.5 bg-third rounded-full" />
+          <div className="divider w-40 h-1 bg-ternary rounded-full" />
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="favorite-content mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
         {favoriteTreatments.map((treatment) => {
           const hargaMulai = Math.min(...Object.values(treatment.harga));
 
@@ -70,7 +71,7 @@ export default function Favorit() {
 
                 <div className="text-right font-poppins text-second">
                   <p className="text-sm font-bold">Mulai dari</p>
-                  <p className="text-2xl font-extrabold">
+                  <p className="text-xl font-extrabold">
                     Rp. {hargaMulai.toLocaleString("id-ID")}
                   </p>
                 </div>
@@ -78,6 +79,19 @@ export default function Favorit() {
             </div>
           );
         })}
+      </div>
+
+      <div className="flex justify-center my-10">
+        <Link
+          href="#daftar-layanan"
+          className="inline-flex items-center gap-3 rounded-full bg-ternary px-6 py-3 font-poppins text-md font-bold text-ternary transition hover:scale-105"
+        >
+          Lihat semua layanan
+
+          <div className="flex h-8 w-8 items-center justify-center rounded-full border-3 border-[#fdf5e6]">
+            <ArrowDown size={24} />
+          </div>
+        </Link>
       </div>
 
 

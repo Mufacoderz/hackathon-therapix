@@ -17,9 +17,9 @@ export default function Home() {
     <Navbar />
     <Hero />
     <WhyChooseUs/>
+    <Favorit/>
     <About/>
     <Lokasi/>
-    <Favorit/>
     <Testimoni/>
     <Reservasi/>
     <FAQ/>
