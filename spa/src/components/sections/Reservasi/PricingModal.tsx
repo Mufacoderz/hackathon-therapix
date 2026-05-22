@@ -79,25 +79,17 @@ export default function PricingModal({
           </div>
 
 
-          <div className="btn-card m-5 p-2 flex flex-col gap-2.5">
+          <div className="btn-card m-5 mt-0 flex flex-col gap-2.5">
             <button
               onClick={handleBook}
-              className="booking font-poppins font-semibold bg-[#8B6B52] text-[#FDF5E6] text-center p-4 rounded-xl 
-  shadow-[2px_3px_0px_0px_#FDF5E6] 
-  hover:shadow-[1px_2px_0px_0px_#FDF5E6] hover:translate-x-px hover:translate-y-px
-  active:shadow-none active:translate-x-0.5 active:translate-y-0.75
-  transition-all duration-100"
+              className="booking font-poppins font-semibold bg-[#8B6B52] text-[#FDF5E6] text-center p-4 rounded-xl  shadow-[2px_3px_0px_0px_#FDF5E6]  hover:shadow-[1px_2px_0px_0px_#FDF5E6] hover:translate-x-px hover:translate-y-px active:shadow-none active:translate-x-0.5 active:translate-y-0.75 transition-all duration-100"
             >
               Booking Sekarang
             </button>
 
             <button
               onClick={() => onClose()}
-              className="batal font-poppins font-semibold bg-[#FDF5E6] text-[#8B6B52] text-center p-4 rounded-xl 
-  shadow-[2px_3px_0px_0px_#761A1C]
-  hover:shadow-[1px_2px_0px_0px_#761A1C] hover:translate-x-px hover:translate-y-px
-  active:shadow-none active:translate-x-0.5 active:translate-y-0.75
-  transition-all duration-100"
+              className="batal font-poppins font-semibold bg-[#FDF5E6] text-[#8B6B52] text-center p-4 rounded-xl  shadow-[2px_3px_0px_0px_#761A1C] hover:shadow-[1px_2px_0px_0px_#761A1C] hover:translate-x-px hover:translate-y-px active:shadow-none active:translate-x-0.5 active:translate-y-0.75 transition-all duration-100"
             >
               Batal
             </button>
