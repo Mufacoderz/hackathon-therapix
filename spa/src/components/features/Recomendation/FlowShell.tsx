@@ -134,18 +134,20 @@ export default function FlowShell() {
             />
           )}
           {step === 2 && (
-            <StepKeluhan
-              value={keluhan}
-              onChange={setKeluhan}
+            <StepDurasi
+              selected={selectedDur}
+              onSelect={setSelectedDur}
               onNext={handleNext}
+
             />
+            
             
             
           )}
           {step === 3 && (
-            <StepDurasi
-              selected={selectedDur}
-              onSelect={setSelectedDur}
+            <StepKeluhan
+              value={keluhan}
+              onChange={setKeluhan}
               onSubmit={handleSubmit}
               loading={loading}
               error={error}

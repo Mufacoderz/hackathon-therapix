@@ -20,14 +20,14 @@ export default function StepLevel({ selected, onSelect, onNext }: Props) {
       <h2 className="text-lg text-center font-semibold font-poppins text-[#8B6B52] mb-1">Seberapa Kuat Pijatan yang Kamu Inginkan</h2>
       <p className="text-sm text-center text-[#C8A96E] mb-5">Pilih Level Pijatan</p>
 
-      <div className="flex mt-12 gap-4 mb-6">
+      <div className="flex mt-12 md:mt-8 gap-4 mb-6">
         {LEVELS.map((lvl) => (
           <button
             key={lvl.id}
             onClick={() => onSelect(lvl.id)}
             className={`rounded-4xl border border-[#8B6B52] text-center transition-all shadow-2xl w-58 h-38 md:h-64 ${
               selected === lvl.id
-                ? " border-4 border-[#8B6B52] bg-stone-100"
+                ? "border-4 border-[#8B6B52] bg-stone-100"
                 : "border border-8B6B52 hover:border-[#8B6B52]"
             }`}
           >

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import abu from "../../../../public/images/anatomy/default.webp";
+import abu from "@/public/images/anatomy/default.webp";
 import { getSelectedImage } from "@/utils/getSelectedImage";
 import { FaArrowLeft, FaRegQuestionCircle } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
