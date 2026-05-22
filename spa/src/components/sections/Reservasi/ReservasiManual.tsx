@@ -39,7 +39,7 @@ export default function ReservasiManual() {
       : TREATMENTS.filter((t) => t.area === AREA_MAP[activeArea]);
 
   return (
-    <div className="reservasi-manual mt-10 w-full">
+    <div id="daftar-layanan" className="reservasi-manual mt-10 w-full">
 
       <div className="flex items-center gap-4 mb-8">
         <div className="flex-1 h-2.5 rounded-full bg-[#BD8622]" />

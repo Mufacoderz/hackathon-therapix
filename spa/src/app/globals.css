@@ -52,8 +52,10 @@
 :root {
   --main-bg: #fdf5e6;
   --second-bg: #E8D0A4;
+  --ternary-bg: #603e00;
   --main-text: #603e00;
-  --main-secondary: #8b6b52;
+  --secondary-text: #8b6b52;
+  --ternary-text: #fdf5e6;
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -133,12 +135,20 @@
       background-color: var(--second-bg);
     }
 
+    .bg-ternary{
+      background-color: var(--ternary-bg)
+    }
+
     .text-main {
         color: var(--main-text);
     }
 
     .text-second {
-        color: var(--main-secondary);
+        color: var(--secondary-text);
+    }
+
+    .text-ternary{
+      color: var(--ternary-text)
     }
 
 }

@@ -10,7 +10,7 @@ export default function About() {
                 <div className="about-center relative pb-8 sm:pb-16">
                     <div className="about-bg bg-second px-6 py-10 sm:px-10 sm:py-14 lg:px-15 lg:py-20">
                         <div className="w-full lg:w-1/2">
-                            <div className="about-head font-playfair text-main text-[40px] sm:text-[55px] lg:text-[70px]">
+                            <div className="about-head font-playfair text-main text-[40px] sm:text-[55px] lg:text-[64px]">
                                 Tentang Kami
                             </div>
                             <div className="about-text font-poppins text-second text-[14px] sm:text-[15px] lg:text-base">
