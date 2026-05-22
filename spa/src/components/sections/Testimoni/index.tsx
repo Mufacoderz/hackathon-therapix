@@ -96,7 +96,7 @@ export default function Testimoni() {
 
               <div className="flex items-center gap-3 mt-8">
                 <CircleUserRound
-                  className="text-purple-400"
+                  className="text-main"
                   size={34}
                 />
 

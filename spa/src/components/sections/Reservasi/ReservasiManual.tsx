@@ -5,6 +5,8 @@ import { TREATMENTS } from "@/data/treatment";
 import type { Treatment } from "@/types/treatment";
 import TreatmentCard from "./TreatmentCard";
 import PricingModal from "./PricingModal";
+import { motion } from "framer-motion"
+
 
 
 type Area = "Treatment Favorit" | "Kepala" | "Lengan" | "Upper Body" | "Kaki" | "Seluruh Badan";
@@ -31,8 +33,8 @@ const TAB_LABEL: Record<Area, string> = {
 };
 
 export default function ReservasiManual() {
-  const [activeArea, setActiveArea] = useState<Area>("Treatment Favorit");
-  const [modalTreatment, setModalTreatment] = useState<Treatment | null>(null);
+  const [activeArea, setActiveArea] = useState<Area>("Treatment Favorit")
+  const [modalTreatment, setModalTreatment] = useState<Treatment | null>(null)
 
   const filtered =
     activeArea === "Treatment Favorit"
@@ -76,7 +78,7 @@ export default function ReservasiManual() {
           </div>
 
           {/* deskto */}
-          <div className="hidden sm:flex overflow-hidden rounded-t-[15px] bg-[#FDF5E6] border border-[#8B6B52]/30 border-b-2 border-b-[#603e00]">
+          <div className="hidden sm:flex overflow-hidden rounded-t-[15px] bg-[#FDF5E6] border border-[#8B6B52]/30 border-b-2 border-b-[#603e00]  relative">
             {AREAS.map((area) => {
               const isActive = activeArea === area;
 
@@ -84,17 +86,26 @@ export default function ReservasiManual() {
                 <button
                   key={area}
                   onClick={() => setActiveArea(area)}
-                  className={`
-            relative flex-1 px-4 py-4
-            font-poppins text-[14px] md:text-[16px] font-bold text-center leading-snug
-            transition-all duration-200
-            ${isActive
-                      ? "bg-ternary text-white"
-                      : "bg-transparent text-[#8B6B52] hover:bg-[#8B6B52]/10"
-                    }
-          `}
+                  className=" relative flex-1 px-4 py-4 font-poppins text-[14px] md:text-[16px] font-bold text-center leading-snug transition-colors duration-200 text-second"
                 >
-                  {TAB_LABEL[area]}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0  bg-ternary"
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+
+                  <span
+                    className={`relative z-10 ${isActive ? "text-ternary" : "text-[#8B6B52]"
+                      }`}
+                  >
+                    {TAB_LABEL[area]}
+                  </span>
                 </button>
               );
             })}
@@ -102,10 +113,11 @@ export default function ReservasiManual() {
         </div>
 
         <div className="flex flex-col gap-3 sm:gap-4">
-          {filtered.map((treatment) => (
+          {filtered.map((treatment, index) => (
             <TreatmentCard
-              key={treatment.kode}
+              key={`${activeArea}-${treatment.kode}`}
               treatment={treatment}
+              index={index}
               onOpen={setModalTreatment}
             />
           ))}

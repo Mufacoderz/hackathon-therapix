@@ -64,15 +64,15 @@ export default function FlowShell() {
   };
 
   return (
-    <div className="min-h-screen overflow-y-auto bg-[#F5EFE6] px-4 py-8">
+    <div className="min-h-screen overflow-y-auto bg-main px-4 py-8">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center">
         {step < 4 && (
           <div className="mb-6 text-center">
-            <h1 className="text-2xl font-semibold text-[#5C3D2E]">
+            <h1 className="text-2xl font-semibold text-main">
               Rekomendasi AI
             </h1>
 
-            <p className="mt-1 text-sm text-[#9C7B6B]">
+            <p className="mt-1 text-sm text-second">
               {step === 0 && "AI akan menyesuaikan rekomendasi berdasarkan area yang dipilih"}
               {step === 1 && "Pilih level pijatan"}
               {step === 2 && "Berapa lama sesi yang kamu inginkan"}
@@ -92,7 +92,7 @@ export default function FlowShell() {
                   <div className="flex flex-col items-center">
                     <div
                       className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-all ${isActive || isDone
-                          ? "bg-[#8B6B52] text-white"
+                          ? "bg-ternary   text-white"
                           : "border border-[#C9A882] bg-white text-[#C9A882]"
                         }`}
                     >
@@ -101,7 +101,7 @@ export default function FlowShell() {
 
                     <span
                       className={`mt-1 w-16 text-center text-[10px] ${isActive || isDone
-                          ? "font-medium text-[#8B6B52]"
+                          ? "font-medium text-main"
                           : "text-[#C9A882]"
                         }`}
                     >
