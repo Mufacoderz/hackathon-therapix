@@ -117,8 +117,7 @@ export default function WhyChooseUs() {
 
             <div className="overall bg-main h-auto py-10 px-6 sm:px-10 md:px-20 lg:px-40 xl:px-60">
 
-                <motion.div
-                    {...fadeUp}
+                <div
                     className="overall-content flex flex-col items-center justify-between gap-8 text-main font-poppins sm:flex-row sm:gap-4"
                 >
                     {overallItems.map((item, index) => (
@@ -136,7 +135,7 @@ export default function WhyChooseUs() {
                             <p className="text-base font-semibold sm:text-lg md:text-[20px]">{item.text}</p>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
 
             </div>
 
@@ -171,6 +170,7 @@ export default function WhyChooseUs() {
                             >
                                 {index !== whyChooseUsItems.length - 1 && (
                                     <div
+                                        key={`separator-${item.id}`}
                                         className=" absolute top-1/2 right-0 hidden h-28 w-px -translate-y-1/2  bg-[#B08968]/40 lg:block"
                                     />
                                 )}

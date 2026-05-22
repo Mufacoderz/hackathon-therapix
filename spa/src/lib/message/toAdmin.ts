@@ -28,7 +28,7 @@ export function buildMessageToAdmin({
   payment: string;
 }) {
   return `
-Halo Admin, saya ingin melakukan reservasi layanan spa melalui sistem rekomendasi AI. Berikut adalah detail pesanan saya:
+Halo Admin, saya ingin melakukan reservasi layanan De Home Spa. Berikut adalah detail pesanan saya:
 
 DATA PELANGGAN
 Nama: ${nama}
