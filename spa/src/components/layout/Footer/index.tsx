@@ -1,18 +1,34 @@
 import Image from "next/image";
-import logo from '@/public/images/home-spa-logo.webp';
+import logo from '@/public/images/logo.png';
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
 import { GiCheckMark } from "react-icons/gi";
+import footerImage from '@/public/images/footer.webp'
 
 export default function Footer () {
     return (
         <footer id="kontak"
-        className="bg-[#4B1A09]">
+        className="relative font-poppins">
+<div className="absolute inset-0 -z-10">
+    <Image
+      src={footerImage}
+      alt="footer background"
+      fill
+      className="object-cover"
+      quality={100}
+    />
+    {/* overlay */}
+    <div className="absolute inset-0 bg-black/60" />
+  </div>
+    
   <div className="mx-auto max-w-7xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div>
+        <div className="flex justify-start items-center">
         <div className="flex justify-center sm:justify-start">
-            <Image src={logo} width={160} height={100} quality={75}  alt="spa logo" className="object-contain w-auto h-auto"/>
+            <Image src={logo} width={100} height={50} quality={75}  alt="spa logo" className="object-contain w-auto h-auto"/>
+        </div>
+            <h1 className="text-white text-4xl font-bold">De Home Spa</h1>
         </div>
 
         <p className="mt-6 max-w-md text-center mx-auto sm:mx-0 leading-relaxed text-white sm:max-w-xs sm:text-left">
@@ -117,7 +133,7 @@ export default function Footer () {
     <div className="mt-12 border-t border-gray-100 pt-6">
       <div className="text-center sm:flex sm:justify-center sm:text-center">
         <p className="mt-4 text-sm text-white sm:order-first sm:mt-0">
-          © 2026 Home Spa
+          © 2026 Home Spa - Samarinda, Kalimantan Timur
         </p>
       </div>
     </div>
