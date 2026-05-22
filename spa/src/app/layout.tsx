@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "sonner"
 
 import {
   Poppins,
@@ -46,6 +47,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         {children}
+        <Toaster position="top-center" />
       </body>
     </html>
   );
