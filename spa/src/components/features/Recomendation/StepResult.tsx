@@ -72,16 +72,13 @@ export default function StepResult({ result, keluhan }: Props) {
 
             <div className="mt-5 flex flex-wrap gap-3">
               <span className="rounded-full bg-[#8B6B52] px-4 py-1 text-[10px] font-semibold text-white">
-                {result.treatment.area}
+                #{result.treatment.area}
               </span>
 
               <span className="rounded-full bg-[#8B6B52] px-4 py-1 text-[10px] font-semibold text-white">
-                {result.treatment.level}
+                #{result.treatment.level}
               </span>
 
-              <span className="rounded-full bg-[#8B6B52] px-4 py-1 text-[10px] font-semibold text-white">
-                {result.durasi} Menit
-              </span>
             </div>
           </div>
 
@@ -112,7 +109,7 @@ export default function StepResult({ result, keluhan }: Props) {
                   </div>
 
                   <div className="rounded-lg border border-[#F0C98D] bg-[#FFF3D5] px-4 py-3">
-                    <p className="text-[10px] text-[#C8A96E]">↗ Harga</p>
+                    <p className="text-[10px] text-[#C8A96E]">Harga</p>
                     <p className="mt-1 text-2xl font-semibold text-[#8B6B52]">
                       {formatPrice(result.treatment.harga_durasi)}
                     </p>
